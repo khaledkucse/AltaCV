@@ -1,0 +1,183 @@
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+\usepackage{paracol}
+
+
+
+\ifxetexorluatex
+  \setmainfont{Lato}
+\else
+  \usepackage[default]{lato}
+\fi
+
+
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+% \colorlet{tagline}{PastelRed}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+
+\begin{document}
+\name{C M Khaled Saifullah}
+\tagline{Software Engineer | Application Developer | AI}
+
+\photoR{2.5cm}{QRCode}
+\personalinfo{
+  \email{khaled.saifullah@usask.ca}
+  \phone{(+1) 306-914-6199}
+  \mailaddress{Burnaby, British Columbia, Canada}
+  \homepage{khaledkucse.github.io/}
+  \twitter{@CMKSaifullah}
+  \linkedin{khaledkucse}
+  \github{khaledkucse}
+}
+
+\makecvheader
+
+\AtBeginEnvironment{itemize}{\small}
+
+
+\columnratio{0.6}
+
+\begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Software Engineer}{Department of Computer Science, University of Saskatchewan}{Nov. 2019 -- Present}{Remote, Full Time}
+\begin{itemize}
+
+\item \textbf{Developed} the data management platform for \textbf{37.2M CAD funded} Plant Phenotyping and Imaging Research Center ($P^{2}IRC$) that accommodates more than 100 TB of \textbf{multidisciplinary data} (Satellite Image, Genome Sequence, UAV, LiDAR, Soil, Weather, and Census Data).
+
+\item \textbf{Worked} directly with the \textbf{stakeholders} to determine the \textbf{user stories}, led the \textbf{agile, iterative, and incremental} software engineering practices, and increased \textbf{user engagement} by \textbf{150\%} in last six months.
+
+\item Presented the data management proposal to\textbf{ top international research institutes} that evolved \textbf{partnership} in long term initiatives (\href{https://news.usask.ca/media-release-pages/2020/usask-global-institute-for-food-security-partners-with-bangladesh-to-promote-sustainable-food-security.php}{\underline{MOU between} \underline{GIFS and Bangladesh}}, Global Water Future, Canadian Light Source Inc.)  
+
+
+\end{itemize}
+
+\divider
+
+\cvevent{Graduate Research Assistant}{Software Research Lab, University of Saskatchewan}{Sep. 2017 -- Oct. 2019}{Saskatoon, Canada}
+\begin{itemize}
+
+\item Researched and developed tools (COSTER, COSTERJS, DAMCA) that \textbf{mined} over \textbf{25 million} code snippets from Github and Stack Overflow and solved software engineering problems (code recommendation, type inference).
+
+\item Maintained and gave support to the \textbf{largest code clone dataset} BigCloneBench (over \textbf{8 million} manually validated clone pairs).
+
+\item \textbf{Collaborated} with brilliant researchers \textbf{across the globe} (Queens University,  Dalhousie University, Microsoft).
+\end{itemize}
+
+\divider
+
+\cvevent{Web Developer}{South Asian Youth Society}{Feb. 2015 -- Sep. 2017}{Remote, Part Time}
+\begin{itemize}
+
+\item \textbf{Developed and maintained} \href{http://www.says.org.bd/modelsaarc}{\underline{Model SAARC 2015}}, \href{http://says.org.bd/blog/}{\underline{SAYS Diaries}} and\\ \href{http://says.org.bd/initiatives/}{\underline{SAYS Initiatives}} websites using WordPress template. 
+
+\end{itemize}
+
+\divider
+
+\cvevent{Lecturer}{Computer Science, Daffodil International University}{Sep. 2016 -- Aug. 2017}{Dhaka, Bangladesh}
+\begin{itemize}
+\item \textbf{Organized and instructed} CS courses to 250+ students (Data Structure, Algorithm, Software Engineering).
+\end{itemize}
+
+\cvsection{SKILLS \& COMPETENCIES}
+
+\cvproject{Technical Skills}
+
+\begin{small}
+\textbf{Proficient with}:
+\cvtag{Java} \cvtag{Python} \cvtag{Flask} \cvtag{Spring Boot} \cvtag{REST API} \cvtag{Docker} \cvtag{Linux} \cvtag{Git} \cvtag{SQL} \cvtag{Agile}\\
+\end{small}
+
+\begin{small}
+\textbf{Familiar with}:
+\cvtag{TypeScript} \cvtag{ReactJS/Redux} \cvtag{NodeJS} \cvtag{Tensorflow} \cvtag{Machine Learning} \cvtag{Word Embedding} \cvtag{Elastic Search}\\
+\end{small}
+
+\cvproject{Core Competencies}
+
+\begin{small}
+\textbf{Strong with}:
+\cvtag{Leadership} \cvtag{Communication} \cvtag{Teamwork} \cvtag{Problem Solving} \cvtag{Research} \cvtag{Creativity}
+\end{small}
+\newpage
+
+\nocite{*}
+
+
+\switchcolumn
+
+\cvsection{Projects}
+\cvproject{SciDataManager |\scriptsize{\href{https://p2irc-data-dev.usask.ca}{Website}, \href{https://www.youtube.com/watch?v=ELM6gXlxBQg}{Talk}}}
+\begin{itemize}
+\item  Data management repository for storing and sharing scientific research data built using \textbf{Python Flask} at back-end, \textbf{ReactJS/Redux} at front-end, and \textbf{PostgreSQL} and \textbf{Elasticsearch} for DB. 
+\item Integrated \textbf{oAuth 2.0} authentication, \textbf{Globus} and \textbf{DropzoneJS} data transfer, dataset versioning using \textbf{Git}, mapping of different data templates, infinite scroll, Chonky Browser. 
+\end{itemize}
+
+\cvproject{BigCloneWe |\scriptsize{\href{https://bigclonewe.usask.ca/}{Website}, \href{https://github.com/khaledkucse/bigclonewe}{Github}, \href{https://www.youtube.com/watch?v=cdTj92yJRRA}{Demo}}}
+\begin{itemize}
+\item \textbf{Spring Boot} application providing an evaluation platform for the code clone detection tools.
+\item Results of code clone detection tools are evaluated and ranked on top of BigCloneBench.
+\end{itemize}
+
+\cvproject{COSTER |\scriptsize{\href{https://github.com/khaledkucse/COSTER/}{Gitub}, \href{https://marketplace.eclipse.org/content/coster}{Eclipse Plugin}, 
+\href{https://youtu.be/oDZtw9MzUWM}{Demo}, \href{https://ieeexplore.ieee.org/document/8952501}{ASE 19 Paper}}}
+\begin{itemize}
+\item Context sensitive Java type solver that finds FQNs of APIs from Stack Overflow posts.
+\item Built the technique and plugin using \textbf{Apache Lucene}, Cosine Similarity, and Levenshtein Distance.
+\end{itemize}
+
+\cvproject{COSTERJS |\scriptsize{\href{https://github.com/khaledkucse/COSTERJS}{Gitub}, 
+\href{https://www.youtube.com/watch?v=2dnLtT1q8p4&t=1038s}{Talk}, 
+\href{https://ieeexplore.ieee.org/document/9054814}{SANER 20 Paper}}}
+\begin{itemize}
+\item Automated type annotator for \textbf{JavaScript} built using \textbf{TypeScript} and \textbf{Python}.
+\item \textbf{Elastic Search}, \textbf{Word2Vec}, \textbf{TypeScript Compiler API} used that \textbf{outperformed} DL techniques.
+\end{itemize}
+
+\cvproject{DAMCA |\scriptsize{\href{https://github.com/khaledkucse/DeepAPIMethodCumArgRecc}{Github}}}
+\begin{itemize}
+\item A neural encoder decoder built with \textbf{Tensorflow Keras} and \textbf{Estimator} to recommend API method name and argument(s) for Java.
+\item \textbf{Eclipse JDT} used to parse and collect type binding information, and \textbf{pandas} to create dataset for neural encoder decoder.
+\end{itemize}
+
+
+\cvsection{Education}
+
+\cvevent{M. Sc. in Computer Science}{University of Saskatchewan, Canada}{Sep. 2017 - Jan. 2020}{}
+\scriptsize{\textbf{Major}: Software Engineering\\
+\textbf{Award}: Department Scholarship and Faculty Stipend, 2017-2019, Grad Student Travel Award, 2020.\\
+\textbf{Volunteer Activities}: Organized \textbf{career fair}, \textbf{research poster showcase} being the exec. Member of CSGC and GSA representative, exec. member of IEEE North Saskatchewan section.}
+
+\divider
+
+\cvevent{B. Sc. in Computer Science and Engr.}{Khulna University, Bangladesh}{Jun. 2011 - Jun. 2016}{}
+\scriptsize{\textbf{Award}: University Scholarship, 2012-2016, Champion dept. programming contest 2015\\
+\textbf{Volunteer Activities}: Organized \textbf{CSE FEST} and \textbf{programming contest} being general secretary of Computer Club, \textbf{convenor} at KU Rag'15 and Bengali new year celebration'14, campus lead of \textbf{Microsoft Student Partner}}
+
+\end{paracol}
+
+\end{document}

@@ -124,14 +124,15 @@
 
 \RequirePackage{xcolor}
 
-\colorlet{accent}{blue!70!black}
+\colorlet{accent}{black!70!blue}
 \colorlet{emphasis}{black}
 \colorlet{heading}{black}
 \colorlet{headingrule}{black}
 \colorlet{subheading}{emphasis}
 \colorlet{body}{black!80!white}
 \colorlet{name}{heading}
-\colorlet{tagline}{accent}
+\colorlet{tagline}{emphasis}
+\colorlet{date}{emphasis}
 \newcommand{\itemmarker}{{\small\textbullet}}
 \newcommand{\ratingmarker}{\faCircle}
 
@@ -149,7 +150,7 @@
 % \RequirePackage{marginfix}
 
 \setlength{\parindent}{0pt}
-\newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+\newcommand{\divider}{\textcolor{emphasis}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -177,14 +178,14 @@
 \ExplSyntaxOn
 \NewDocumentCommand{\printinfo}{m m o}{%
   \IfNoValueTF{#3}{%
-    \mbox{\textcolor{accent}{\normalfont #1}~\utffriendlydetokenize{#2}\hspace{2em}}%
+    \mbox{\textcolor{emphasis}{\normalfont #1}~\utffriendlydetokenize{#2}\hspace{2em}}%
   }{%
      \if@withhyper%
-      \mbox{\textcolor{accent}{\normalfont #1}~
+      \mbox{\textcolor{emphasis}{\normalfont #1}~
       \href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
      \else%
        \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
-      \mbox{\textcolor{accent}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
+      \mbox{\textcolor{emphasis}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
      \fi%
   }%
 }%
@@ -285,8 +286,8 @@
 \newcommand{\cvsection}[2][]{%
   \bigskip%
   \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
-  {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
-  {\color{headingrule}\rule{\linewidth}{2pt}\par}\medskip
+  {\color{emphasis}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
+  {\color{emphasis}\rule{\linewidth}{2pt}\par}\medskip
 }
 
 \newcommand{\cvsubsection}[1]{%
@@ -299,7 +300,7 @@
   {\large\color{emphasis}#1\par}
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}\par
+  \textbf{\color{emphasis}#2}\par
   \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
@@ -314,6 +315,11 @@
   \smallskip
 }
 
+\newcommand{\cvproject}[1]{%
+  {\textbf{\color{emphasis}#1}\par}
+  \smallskip\normalsize
+}
+
 \newcommand{\cvtag}[1]{%
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
@@ -321,7 +327,7 @@
 \newcommand{\cvskill}[2]{%
 \textcolor{emphasis}{\textbf{#1}}\hfill
 \foreach \x in {1,...,5}{%
-  \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
+  \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{emphasis}}\ratingmarker}}\par%
 }
 
 % Adapted from @Jake's answer at http://tex.stackexchange.com/a/82729/226
